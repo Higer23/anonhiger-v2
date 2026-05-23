@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-bg-cosmic: #050505;
+  --color-surface-cosmic: rgba(255, 255, 255, 0.03);
+  --color-surface-cosmic-light: rgba(255, 255, 255, 0.06);
+  --color-border-cosmic: rgba(255, 255, 255, 0.1);
+  --color-gold-cosmic: #CCFF00;
+  --color-gold-cosmic-dim: rgba(204, 255, 0, 0.4);
+  --color-neon-blue: #3b82f6;
+  --color-neon-green: #ccff00;
+}
+
+@layer base {
+  body {
+    background-color: #050505;
+    color: #F0F0F0;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.25;
+  }
+}
+
+/* Custom glow effects and scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CCFF00;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.text-3d {
+  text-shadow: 
+    1px 1px 0px #CCFF00, 
+    2px 2px 0px #CCFF00, 
+    3px 3px 0px #CCFF00, 
+    12px 12px 24px rgba(0,0,0,0.6);
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+}
+
+.glow-gold {
+  box-shadow: 0 0 25px rgba(204, 255, 0, 0.08);
+}
+
+.glow-gold-strong {
+  box-shadow: 0 0 35px rgba(204, 255, 0, 0.25);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 3D card perspective hover effect wrapper */
+.perspective-1000 {
+  perspective: 1000px;
+}
+

@@ -1,0 +1,8 @@
+{
+  "name": "Remix: 3D Interactive Message Portal",
+  "description": "An immersive, 3D-styled animated message portal with real-time feedback, atmospheric particles, interactive shortcuts, and detailed preview parameters.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
